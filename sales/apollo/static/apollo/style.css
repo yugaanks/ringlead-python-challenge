@@ -1,0 +1,67 @@
+h2 { 
+	font: bold italic 2em/1em "Times New Roman", "MS Serif", "New York", serif;
+	margin: 0;
+	padding: 0;
+	color: #555;
+	/*border-top: solid #555 medium;*/
+	border-bottom: dotted #555 thin;
+	
+}
+
+.base {
+  	width: 500px;
+  	margin: 10px;
+
+}
+
+ol {
+  	color: #ccc;
+  	list-style-type: none;
+}
+
+ol li {
+ 	position: relative;
+  	font: bold italic 45px/1.5 Helvetica, Verdana, sans-serif;
+  	margin-bottom: 20px;
+}
+
+ul {
+	margin-left: 20px;
+	list-style-type: disc;
+}
+
+ul li {
+	
+	font: 12px Helvetica, sans-serif;
+  	padding-left: 20px;
+  	color: #555;
+}
+
+span {
+  	position: absolute;
+}
+
+.welcome_list  {
+	font: italic 16px Helvetica, sans-serif;
+}
+
+/*#footer a {
+	font: bold italic 1em/1em "Times New Roman", "MS Serif", "New York", serif;
+	color: #555;
+
+
+}*/
+
+footer a:link, a:visited {
+    background-color: #758;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+footer a:hover, a:active {
+    background-color: #555;
+}

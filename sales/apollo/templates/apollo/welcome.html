@@ -1,0 +1,64 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'apollo/style.css' %}" />
+<link rel="shortcut icon" href="{% static 'apollo/favicon.ico' %}" /> 
+<script type="text/javascript">
+	function myFunction_customer() {
+		var x=document.getElementById("add-customer");
+		if(x.style.display==='none')
+			x.style.display="block";
+		else
+			x.style.display="none";
+	}
+	function myFunction_product() {
+		var x=document.getElementById("add-product");
+		if(x.style.display==='none')
+			x.style.display="block";
+		else
+			x.style.display="none";
+	}
+</script>
+<h2>Welcome to my Sales Application - Apollo</h2>
+<ul>
+	<li class="welcome_list"><a href="/apollo/list-all-customers">List all Customers and their In Cart products</a></li>
+	<li class="welcome_list"><a href="#add-customer" onclick="myFunction_customer()">Add a customer</a></li>
+	<div id="add-customer" style="display: none;">
+		<form id="myform"  method="POST" action="">
+			<label>Customer First Name: </label>
+			<input type="text" name="customer first name" id="customer_first_name"><br/>
+			<label>Customer Last Initial: </label>
+			<input type="text" maxlength="1" name="customer last initial" id="customer_last_initial"><br/>
+			<input id="submit" name="submit" type="submit"  value="Add">
+		</form>
+	</div>
+	<li class="welcome_list"><a href="#add-product" onclick="myFunction_product()">Add a product</a></li>
+	<div id="add-product" style="display: none;">
+		<form id="myform"  method="POST" action="">
+			<label>Product Name: </label>
+			<input type="text" name="customer first name" id="product_name"><br/>
+			<label>Product Description: </label>
+			<input type="text" name="customer last initial" id="product_description"><br/>
+			<input id="submit" name="submit" type="submit" value="Add">
+		</form>
+	</div>
+	<li class="welcome_list">Delete a product</li>
+	<li class="welcome_list">Delete a customer</li>
+</ul>
+<!-- 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+	function onsubmitform() {
+		$("#myform").submit(function(e){
+			e.preventDefault();
+			var formData = {'customer_first_name': 'brook', 'customer_last_initial': 'h'}
+			$.ajax({
+				  type: "POST",
+				  url: "http://localhost:8000/apollo/add-customer/",
+				  data: formData,
+				  success: function(data){console.log(data);},
+				  dataType: "json",
+				  contentType : "application/json"
+			});
+		});
+	}
+</script>
+ -->

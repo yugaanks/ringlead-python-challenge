@@ -1,0 +1,34 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'apollo/style.css' %}" />
+<link rel="shortcut icon" href="{% static 'apollo/favicon.ico' %}" /> 
+<h2 id="top">Customer List</h2>
+{% if customer_list %}
+	<ol>
+	{% for customer in customer_list %}
+	<li><span>{{ customer.pk }}</span>
+		<div class="base">
+			<ul>
+				<li><strong>First-Name:</strong> {{ customer.customer_first_name }}</li>
+				<li><strong>Last-Initial:</strong> {{ customer.customer_last_initial }}</li>
+				<li>
+					<strong>In Cart:</strong>{% if customer.products.all %}
+							{% for product in customer.products.all %}
+								{{ product.product_name }},
+							{% endfor %}
+						{% else %}
+							No products in cart
+						{% endif %}
+				</li>
+			</ul>
+		</div>
+		</li>
+		<br/>
+
+	{% endfor %}
+	</ul>
+{% else %}
+	<p>No customers are available.</p>
+{% endif %}
+<footer>
+	<a href="/apollo">Main</a>  <a href="#top">Top</a>
+</footer>
